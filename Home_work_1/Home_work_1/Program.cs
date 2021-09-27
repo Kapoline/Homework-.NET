@@ -18,10 +18,10 @@ namespace Home_work_1
 
         enum Exception
         {
-            NotEnoughArguments = 0,
-            SomeOrAllArgsNotInteger = 1,
-            OperatorDoseNotExist = 2,
-            AllDone = 3,
+            NotEnoughArguments = 1,
+            SomeOrAllArgsNotInteger = 2,
+            OperatorDoseNotExist = 3,
+            AllDone = 0,
         }
 
         public static int Main(string[] args)
@@ -31,23 +31,23 @@ namespace Home_work_1
                 return 0;
             }
 
-            if (!IL_Library_1.Parser.IsInt(args[2], out var num2) || !IL_Library_1.Parser.IsInt(args[0], out var num1))
+            if (!Parser.IsInt(args[2], out var num2) || !Parser.IsInt(args[0], out var num1))
             {
                 return 1;
             }
 
-            var operation = IL_Library_1.Parser.OperationDetector(args[1]);
+            var operation = Parser.OperationDetector(args[1]);
 
-            if ( operation == IL_Library_1.Calculator.operations.UnknownOperation)
+            if ( operation == Calculator.operations.UnknownOperation)
             {
                 return 2;
             }
 
-            var result = IL_Library_1.Calculator.Calculate(num1, num2,  operation);
+            var result = Calculator.Calculate(num1, num2,  operation);
 
             Console.WriteLine($"{num1}{args[1]}{num2}={result}");
 
-            return 3;
+            return 0;
         }
     }
 }
