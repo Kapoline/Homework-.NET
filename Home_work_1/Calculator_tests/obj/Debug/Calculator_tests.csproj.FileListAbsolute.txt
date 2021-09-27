@@ -1,0 +1,11 @@
+C:\Users\User\Homework-.NET\Home_work_1\Calculator_tests\bin\Debug\Calculator_tests.dll
+C:\Users\User\Homework-.NET\Home_work_1\Calculator_tests\bin\Debug\Calculator_tests.pdb
+C:\Users\User\Homework-.NET\Home_work_1\Calculator_tests\bin\Debug\Home_work_1.exe
+C:\Users\User\Homework-.NET\Home_work_1\Calculator_tests\bin\Debug\nunit.framework.dll
+C:\Users\User\Homework-.NET\Home_work_1\Calculator_tests\bin\Debug\Home_work_1.pdb
+C:\Users\User\Homework-.NET\Home_work_1\Calculator_tests\bin\Debug\nunit.framework.xml
+C:\Users\User\Homework-.NET\Home_work_1\Calculator_tests\obj\Debug\Calculator_tests.csproj.AssemblyReference.cache
+C:\Users\User\Homework-.NET\Home_work_1\Calculator_tests\obj\Debug\Calculator_tests.csproj.CoreCompileInputs.cache
+C:\Users\User\Homework-.NET\Home_work_1\Calculator_tests\obj\Debug\Calculator_tests.csproj.CopyComplete
+C:\Users\User\Homework-.NET\Home_work_1\Calculator_tests\obj\Debug\Calculator_tests.dll
+C:\Users\User\Homework-.NET\Home_work_1\Calculator_tests\obj\Debug\Calculator_tests.pdb

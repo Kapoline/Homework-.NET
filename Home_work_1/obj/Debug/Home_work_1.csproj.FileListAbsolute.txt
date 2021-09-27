@@ -1,0 +1,6 @@
+C:\Users\User\Homework-.NET\Home_work_1\bin\Debug\Home_work_1.exe
+C:\Users\User\Homework-.NET\Home_work_1\bin\Debug\Home_work_1.pdb
+C:\Users\User\Homework-.NET\Home_work_1\obj\Debug\Home_work_1.csproj.AssemblyReference.cache
+C:\Users\User\Homework-.NET\Home_work_1\obj\Debug\Home_work_1.csproj.CoreCompileInputs.cache
+C:\Users\User\Homework-.NET\Home_work_1\obj\Debug\Home_work_1.exe
+C:\Users\User\Homework-.NET\Home_work_1\obj\Debug\Home_work_1.pdb
