@@ -1,0 +1,16 @@
+C:\Users\User\Homework-.NET\Homework_1\bin\Debug\net5.0\Homework_1.exe
+C:\Users\User\Homework-.NET\Homework_1\bin\Debug\net5.0\Homework_1.deps.json
+C:\Users\User\Homework-.NET\Homework_1\bin\Debug\net5.0\Homework_1.runtimeconfig.json
+C:\Users\User\Homework-.NET\Homework_1\bin\Debug\net5.0\Homework_1.runtimeconfig.dev.json
+C:\Users\User\Homework-.NET\Homework_1\bin\Debug\net5.0\Homework_1.dll
+C:\Users\User\Homework-.NET\Homework_1\bin\Debug\net5.0\ref\Homework_1.dll
+C:\Users\User\Homework-.NET\Homework_1\bin\Debug\net5.0\Homework_1.pdb
+C:\Users\User\Homework-.NET\Homework_1\obj\Debug\net5.0\Homework_1.csproj.AssemblyReference.cache
+C:\Users\User\Homework-.NET\Homework_1\obj\Debug\net5.0\Homework_1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Homework-.NET\Homework_1\obj\Debug\net5.0\Homework_1.AssemblyInfoInputs.cache
+C:\Users\User\Homework-.NET\Homework_1\obj\Debug\net5.0\Homework_1.AssemblyInfo.cs
+C:\Users\User\Homework-.NET\Homework_1\obj\Debug\net5.0\Homework_1.csproj.CoreCompileInputs.cache
+C:\Users\User\Homework-.NET\Homework_1\obj\Debug\net5.0\Homework_1.dll
+C:\Users\User\Homework-.NET\Homework_1\obj\Debug\net5.0\ref\Homework_1.dll
+C:\Users\User\Homework-.NET\Homework_1\obj\Debug\net5.0\Homework_1.pdb
+C:\Users\User\Homework-.NET\Homework_1\obj\Debug\net5.0\Homework_1.genruntimeconfig.cache
