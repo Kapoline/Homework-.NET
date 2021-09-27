@@ -1,5 +1,0 @@
-C:\Users\User\Homework-.NET\Home_work_1\IL_Library_1\bin\Release\netstandard2.0\IL_Library_1.deps.json
-C:\Users\User\Homework-.NET\Home_work_1\IL_Library_1\bin\Release\netstandard2.0\IL_Library_1.dll
-C:\Users\User\Homework-.NET\Home_work_1\IL_Library_1\obj\Release\netstandard2.0\IL_Library_1.ilproj.AssemblyReference.cache
-C:\Users\User\Homework-.NET\Home_work_1\IL_Library_1\obj\Release\netstandard2.0\IL_Library_1.ilproj.CoreCompileInputs.cache
-C:\Users\User\Homework-.NET\Home_work_1\IL_Library_1\obj\Release\netstandard2.0\IL_Library_1.dll
