@@ -47,7 +47,7 @@ namespace Home_work_1
 
             Console.WriteLine($"{num1}{args[1]}{num2}={result}");
 
-            return 3;
+            return 0;
         }
     }
 }
