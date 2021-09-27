@@ -2,7 +2,6 @@ C:\Users\User\Homework-.NET\Home_work_1\Calculator_tests\bin\Release\Calculator_
 C:\Users\User\Homework-.NET\Home_work_1\Calculator_tests\bin\Release\Calculator_tests.pdb
 C:\Users\User\Homework-.NET\Home_work_1\Calculator_tests\bin\Release\Home_work_1.exe
 C:\Users\User\Homework-.NET\Home_work_1\Calculator_tests\bin\Release\nunit.framework.dll
-C:\Users\User\Homework-.NET\Home_work_1\Calculator_tests\bin\Release\IL_Library_1.dll
 C:\Users\User\Homework-.NET\Home_work_1\Calculator_tests\bin\Release\Home_work_1.pdb
 C:\Users\User\Homework-.NET\Home_work_1\Calculator_tests\bin\Release\nunit.framework.xml
 C:\Users\User\Homework-.NET\Home_work_1\Calculator_tests\obj\Release\Calculator_tests.csproj.AssemblyReference.cache

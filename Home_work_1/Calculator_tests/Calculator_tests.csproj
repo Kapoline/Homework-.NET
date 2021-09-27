@@ -46,17 +46,9 @@
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <ItemGroup>
-      <ProjectReference Include="..\Home_work_1.csproj">
-        <Project>{b78fb486-9a12-4995-8bca-f791f831126e}</Project>
-        <Name>Home_work_1</Name>
-      </ProjectReference>
       <ProjectReference Include="..\Home_work_1\Home_work_1.csproj">
         <Project>{b78fb486-9a12-4995-8bca-f791f831126e}</Project>
         <Name>Home_work_1</Name>
-      </ProjectReference>
-      <ProjectReference Include="..\IL_Library_1\IL_Library_1.ilproj">
-        <Project>{76bb6a59-3ac9-4677-b77a-2e2bd3f522bf}</Project>
-        <Name>IL_Library_1</Name>
       </ProjectReference>
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
