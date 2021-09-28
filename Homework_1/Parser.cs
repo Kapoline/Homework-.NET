@@ -2,9 +2,9 @@
 {
     public class Parser
     {
-        public static bool IsInt(string num1, out int num11)
+        public static bool IsInt(string num1, out int num2)
         {
-            if (int.TryParse(num1, out num11))
+            if (int.TryParse(num1, out num2))
                 return true;
             else
             {
