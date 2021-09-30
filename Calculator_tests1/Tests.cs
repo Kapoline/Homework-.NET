@@ -1,6 +1,5 @@
 ﻿using System;
 using Home_work_1;
-using Microsoft.VisualStudio.TestPlatform.TestHost;
 using NUnit.Framework;
 using Program = Microsoft.VisualStudio.TestPlatform.TestHost.Program;
 
@@ -15,10 +14,10 @@ namespace Calculator_tests
             //Arrange
             var var1 = 1;
             var var2 = 2;
-            var operation = Calculator.operations.Plus;
+            var operation = IL_library_.Calculator.operations.Plus;
 
             //Act
-            var result = Calculator.Calculate(var1, var2, operation);
+            var result = IL_library_.Calculator.Calculate(var1, var2, operation);
 
             //Assert
             Assert.AreEqual(3, result);
@@ -29,9 +28,9 @@ namespace Calculator_tests
         {
             var var1 = 2;
             var var2 = 1;
-            var operation = Calculator.operations.Minus;
+            var operation = IL_library_.Calculator.operations.Minus;
 
-            var result = Calculator.Calculate(var1, var2, operation);
+            var result = IL_library_.Calculator.Calculate(var1, var2, operation);
 
             Assert.AreEqual(1, result);
         }
@@ -41,9 +40,9 @@ namespace Calculator_tests
         {
             var var1 = 2;
             var var2 = 1;
-            var operation = Calculator.operations.Mult;
+            var operation = IL_library_.Calculator.operations.Mult;
 
-            var result = Calculator.Calculate(var1, var2, operation);
+            var result = IL_library_.Calculator.Calculate(var1, var2, operation);
 
             Assert.AreEqual(2, result);
         }
@@ -53,9 +52,9 @@ namespace Calculator_tests
         {
             var var1 = 2;
             var var2 = 1;
-            var operation = Calculator.operations.Divide;
+            var operation = IL_library_.Calculator.operations.Divide;
 
-            var result = Calculator.Calculate(var1, var2, operation);
+            var result = IL_library_.Calculator.Calculate(var1, var2, operation);
 
             Assert.AreEqual(2, result);
         }
@@ -65,15 +64,15 @@ namespace Calculator_tests
         {
             var var1 = 4000;
             var var2 = 4000;
-            Calculator.operations operations = default;
+            IL_library_.Calculator.operations operations = default;
 
             try
             {
-                Calculator.Calculate(var1, var2, operations);
+                IL_library_.Calculator.Calculate(var1, var2, operations);
             }
             catch (Exception e)
             {
-                Assert.AreEqual(Calculator.WrongOperator, e);
+                Assert.AreEqual(Calculator.WrongOperator.Message, e);
             }
         }
 
@@ -82,14 +81,14 @@ namespace Calculator_tests
         {
             var var1 = 1;
             var var2 = 0;
-            var operation = Calculator.operations.Divide;
+            var operation = IL_library_.Calculator.operations.Divide;
             try
             {
-                Calculator.Calculate(var1, var2, operation);
+                IL_library_.Calculator.Calculate(var1, var2, operation);
             }
             catch (Exception e)
             {
-                Assert.AreEqual(Calculator.DivideByZero, e);
+                Assert.AreEqual(Calculator.DivideByZero.Message, e.Message);
             }
         }
 
@@ -98,14 +97,14 @@ namespace Calculator_tests
         {
             var var1 = 1;
             var var2 = 2;
-            var operation = Calculator.operations.UnknownOperation;
+            var operation = IL_library_.Calculator.operations.UnknownOperation;
             try
             {
-                Calculator.Calculate(var1, var2, operation);
+                IL_library_.Calculator.Calculate(var1, var2, operation);
             }
             catch (Exception e)
             {
-                Assert.AreEqual(Calculator.WrongOperator, e);
+                Assert.AreEqual(Calculator.WrongOperator.Message, e.Message);
             }
         }
     }
@@ -118,10 +117,10 @@ namespace Calculator_tests
         {
             var var1 = '=';
             var var2 = '-';
-            Calculator.operations operations = default;
+            IL_library_.Calculator.operations operations = default;
             try
             {
-                Calculator.Calculate(var1, var2, operations);
+                IL_library_.Calculator.Calculate(var1, var2, operations);
             }
             catch (Exception e)
             {
@@ -133,7 +132,7 @@ namespace Calculator_tests
         public void TestIsInt()
         {
             var var1 = "1";
-            var result = Parser.IsInt(var1, out _);
+            var result = IL_library_.Parser.IsInt(var1, out _);
             Assert.AreEqual(true, result);
         }
 
@@ -141,7 +140,7 @@ namespace Calculator_tests
         public void TestIsNotInt()
         {
             var var1 = "hi";
-            var result = Parser.IsInt(var1, out _);
+            var result = IL_library_.Parser.IsInt(var1, out _);
             Assert.AreEqual(false,result);
         }
         [Test]
@@ -149,8 +148,8 @@ namespace Calculator_tests
         {
             var var1 = 1;
             var var2 = 2;
-            var operation = Parser.OperationDetector("+");
-            var result = Calculator.Calculate(var1, var2, operation);
+            var operation = IL_library_.Parser.OperationDetector("+");
+            var result = IL_library_.Calculator.Calculate(var1, var2, operation);
             Assert.AreEqual(3, result);
         }
 
@@ -159,8 +158,8 @@ namespace Calculator_tests
         {
             var var1 = 2;
             var var2 = 1;
-            var operation = Parser.OperationDetector("-");
-            var result = Calculator.Calculate(var1, var2, operation);
+            var operation = IL_library_.Parser.OperationDetector("-");
+            var result = IL_library_.Calculator.Calculate(var1, var2, operation);
             Assert.AreEqual(1, result);
         }
 
@@ -169,8 +168,8 @@ namespace Calculator_tests
         {
             var var1 = 2;
             var var2 = 1;
-            var operation = Parser.OperationDetector("/");
-            var result = Calculator.Calculate(var1, var2, operation);
+            var operation = IL_library_.Parser.OperationDetector("/");
+            var result = IL_library_.Calculator.Calculate(var1, var2, operation);
             Assert.AreEqual(2, result);
         }
 
@@ -179,8 +178,8 @@ namespace Calculator_tests
         {
             var var1 = 1;
             var var2 = 2;
-            var operation = Parser.OperationDetector("*");
-            var result = Calculator.Calculate(var1, var2, operation);
+            var operation = IL_library_.Parser.OperationDetector("*");
+            var result = IL_library_.Calculator.Calculate(var1, var2, operation);
             Assert.AreEqual(2, result);
         }
 
@@ -190,7 +189,7 @@ namespace Calculator_tests
             var var1 = "^";
             try
             {
-                var result = Parser.OperationDetector(var1);
+                var result = IL_library_.Parser.OperationDetector(var1);
             }
             catch (Exception e)
             {
