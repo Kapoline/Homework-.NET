@@ -104,7 +104,7 @@ namespace Calculator_tests
             }
             catch (Exception e)
             {
-                Assert.AreEqual(Calculator.WrongOperator.Message, e.Message);
+                Assert.AreEqual(Calculator.WrongOperator.Message, e);
             }
         }
     }
