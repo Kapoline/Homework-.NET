@@ -13,15 +13,14 @@ namespace Home_work_1
 
         public static int Main(string[] args)
         {
-            var operation = IL_library_.Parser.OperationDetector(args[1]);
+            var operation =  F_Calculator.Parser.OperatorDetector(args[1]);
             if (args.Length == 2)
                 return _notEnoughArguments;
-            if (!IL_library_.Parser.IsInt(args[0], out var var1) || !IL_library_.Parser.IsInt(args[2], out var var2))
+            if (!F_Calculator.Parser.IsInt(args[0], out var var1) || !F_Calculator.Parser.IsInt(args[2], out var var2))
                 return _someOrAllArgsNotInteger;
-            if (operation == IL_library_.Calculator.operations.UnknownOperation)
+            if (operation == F_Calculator.Calculator.Operations.UnknownOperation)
                 return _unknownOperation;
-            
-            var result = IL_library_.Calculator.Calculate(var1, var2,  operation);
+            var result = F_Calculator.Calculator.Calculate(var1, var2,  operation);
             Console.WriteLine($"{var1}{args[1]}{var2}={result}");
             
             return 0;
