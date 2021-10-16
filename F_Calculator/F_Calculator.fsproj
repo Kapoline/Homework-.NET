@@ -11,9 +11,4 @@
         <Compile Include="Parser_F.fs" />
     </ItemGroup>
 
-    <ItemGroup>
-      <ProjectReference Include="..\Calculator_tests1\Calculator_tests1.csproj" />
-      <ProjectReference Include="..\Homework_1\Homework_1.csproj" />
-    </ItemGroup>
-
 </Project>

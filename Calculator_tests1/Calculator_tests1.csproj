@@ -15,7 +15,6 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Homework_1\Homework_1.csproj" />
-      <ProjectReference Include="..\IL_library_\IL_library_.ilproj" />
     </ItemGroup>
 
 </Project>

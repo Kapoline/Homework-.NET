@@ -7,7 +7,6 @@
 
     <ItemGroup>
       <ProjectReference Include="..\F_Calculator\F_Calculator.fsproj" />
-      <ProjectReference Include="..\IL_library_\IL_library_.ilproj" />
     </ItemGroup>
 
 </Project>
