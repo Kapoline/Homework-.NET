@@ -79,11 +79,11 @@ namespace Calculator_tests
         {
             var var1 = 4000;
             var var2 = 4000;
-            IL_library_.Calculator.operations operations = default;
+            F_Calculator.Calculator.Operations operations = default;
 
             try
             {
-                IL_library_.Calculator.Calculate(var1, var2, operations);
+                F_Calculator.Calculator.Calculate(var1, var2, operations);
             }
             catch (Exception e)
             {
