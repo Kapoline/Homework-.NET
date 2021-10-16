@@ -74,23 +74,7 @@ namespace Calculator_tests
                 Assert.AreEqual(Calculator.DivideByZero.Message, e.Message);
             }
         }
-        [Test]
-        public void OperationIsRigth()
-        {
-            var var1 = 4000;
-            var var2 = 4000;
-            F_Calculator.Calculator.Operations operations = default;
 
-            try
-            {
-                F_Calculator.Calculator.Calculate(var1, var2, operations);
-            }
-            catch (Exception e)
-            {
-                Assert.AreEqual(Calculator.WrongOperator.Message, e);
-            }
-        }
-        
         [Test]
         public void OperationIsUnknown()
         {
