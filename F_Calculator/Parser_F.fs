@@ -9,7 +9,7 @@ module Parser =
         |"-" -> Calculator.Operations.Minus
         |"*" -> Calculator.Operations.Mult
         |"/" -> Calculator.Operations.Divide
-        | _ -> Calculator.Operations.UnknownOperation
+        | _  -> Calculator.Operations.UnknownOperation
         
     let IsInt (arg:string) (result:outref<int>) =
         let var= ref 0
