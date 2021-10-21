@@ -1,4 +1,5 @@
 ﻿namespace F_Calculator
+
 module Calculator =
     
     type Operations =

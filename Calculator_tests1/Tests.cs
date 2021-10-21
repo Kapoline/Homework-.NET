@@ -1,4 +1,5 @@
 ﻿using System;
+using F_Calculator_RCE;
 using Home_work_1;
 using NUnit.Framework;
 
@@ -179,7 +180,6 @@ namespace Calculator_tests
                 Assert.AreEqual("UnknownOperation", e);
             }
         }
-
         [Test]
         public void EnoughArguments()
         {

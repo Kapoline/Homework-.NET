@@ -18,6 +18,8 @@ namespace Home_work_1
                 return _notEnoughArguments;
             if (!F_Calculator.Parser.IsInt(args[0], out var var1) || !F_Calculator.Parser.IsInt(args[2], out var var2))
                 return _someOrAllArgsNotInteger;
+            //if (!F_Calculator_RCE.Parser_RCE.parserInt<int>(args[0]) || !F_Calculator_RCE.Parser_RCE.parserInt<int>(args[2]))
+                //return _someOrAllArgsNotInteger
             if (operation == F_Calculator.Calculator.Operations.UnknownOperation)
                 return _unknownOperation;
             var result = F_Calculator.Calculator.Calculate(var1, var2,  operation);
