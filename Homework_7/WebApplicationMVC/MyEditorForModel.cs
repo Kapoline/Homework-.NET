@@ -1,15 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Text;
 using System.Text.Encodings.Web;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.AspNetCore.Mvc.ViewFeatures;
-using Microsoft.Extensions.Options;
-using WebApplicationMVC.Models;
+
 
 namespace WebApplicationMVC
 {
@@ -24,13 +21,11 @@ namespace WebApplicationMVC
     }
     public class MyEditorForModels : IHtmlContent
     {
-        private object _model;
         private Type _type;
-        private readonly StringBuilder _resultBuilder = new StringBuilder();
+        private readonly List<IHtmlContent> _list = new ();
         
         public MyEditorForModels(object model)
         {
-            _model = model;
             _type = model.GetType();
             CreateForms(model);
         }
@@ -38,50 +33,87 @@ namespace WebApplicationMVC
         {
             foreach (var property in _type.GetProperties())
             {
-                _resultBuilder.Append(CreateDiv(property, model));
+                _list.Add(CreateLabel(property));
+                _list.Add(CreateDivForInput(property,model));
+                _list.Add(CreateSpan(property,model));
             }
+        }
+
+        private static IHtmlContent CreateSpan(PropertyInfo propertyInfo, object model)
+        {
+            var span = new TagBuilder("span");
+            var attribute = propertyInfo.GetCustomAttributes<ValidationAttribute>();
+            foreach (var attributes in attribute)
+            {
+                if (!attributes.IsValid(propertyInfo.GetValue(model))) continue;
+                span.MergeAttribute("class","validator-error");
+                span.MergeAttribute("data-for",propertyInfo.Name);
+                span.MergeAttribute("data-replace","true");
+                return span.InnerHtml.Append(
+                    attributes.ErrorMessage ?? attributes.FormatErrorMessage(propertyInfo.Name));
+            }
+            return span;
         }
         private static IHtmlContent CreateLabel(PropertyInfo propertyInfo)
         {
             var label = new TagBuilder("label");
-            
+            label.MergeAttribute("for", propertyInfo.Name);
+            label.InnerHtml.AppendHtml(DisplayName(propertyInfo));
             return label;
         }
-        private static IHtmlContent CreateDiv(PropertyInfo propertyInfo, object model)
+        private static IHtmlContent CreateDivForInput(PropertyInfo propertyInfo, object model)
         {
             var div = new TagBuilder("div");
+            div.AddCssClass("card-body");
+            div.MergeAttribute("style", "width: 18rem;");
             div.InnerHtml.AppendHtml(propertyInfo.PropertyType.IsEnum
-                ? CreateEnum(propertyInfo)
+                ? CreateEnum(propertyInfo, model)
                 : CreateInput(propertyInfo, model));
             return div;
         }
-        private static IHtmlContent CreateSelect(PropertyInfo propertyInfo)
+
+        private static IHtmlContent CreateEnum(PropertyInfo fieldInfo, object model)
         {
             var select = new TagBuilder("select");
-            select.Attributes.Add("id", propertyInfo.Name);
-            select.Attributes.Add("name", propertyInfo.Name);
+            select.MergeAttribute("id", fieldInfo.Name);
+            select.MergeAttribute("name", fieldInfo.Name);
+            var variable = fieldInfo.PropertyType.GetFields();
+            foreach (var items in variable)
+            {
+                var option = new TagBuilder("option");
+                option.Attributes.Add("value", fieldInfo.Name);
+                option.InnerHtml.AppendHtml(DisplayName(items));
+                select.InnerHtml.AppendHtml(option);
+            }
             return select;
         }
-
-        private static IHtmlContent CreateEnum(MemberInfo fieldInfo)
+        private static string DisplayName(MemberInfo propertyInfo)
         {
-            var options = new TagBuilder("options");
-            options.Attributes.Add("value", fieldInfo.Name);
-            return options;
+            return propertyInfo.GetCustomAttribute<DisplayAttribute>()?.Name ?? ToCamelCase(propertyInfo.Name);
+        }
+
+        private static string ToCamelCase(string str)
+        {
+            return string.IsNullOrEmpty(str) || str.Length < 2
+                ? str
+                : char.ToLowerInvariant(str[0]) + str.Substring(1);
         }
         private static IHtmlContent CreateInput(PropertyInfo propertyInfo, object model)
         {
             var input = new TagBuilder("input");
-            input.Attributes.Add("class", "btn btn-primary");
-            input.Attributes.Add("id", propertyInfo.Name);
-            input.Attributes.Add("name", propertyInfo.Name);
-            input.Attributes.Add("type", propertyInfo.Name);
-            input.Attributes.Add("value",propertyInfo.GetValue(model)?.ToString());
+            input.MergeAttribute("class", "form-control");
+            input.MergeAttribute("id", propertyInfo.Name);
+            input.MergeAttribute("name", propertyInfo.Name);
+            input.MergeAttribute("type", propertyInfo.Name);
+            input.MergeAttribute("value",propertyInfo.GetValue(model)?.ToString());
             return input;
         }
         public void WriteTo(TextWriter writer, HtmlEncoder encoder)
         {
-            Console.WriteLine(_resultBuilder.ToString());
+            foreach (var content in _list)
+            {
+                content.WriteTo(writer,encoder);
+            }
         }
     }
 }
