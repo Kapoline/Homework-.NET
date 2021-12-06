@@ -15,6 +15,7 @@ module Parser_RCE =
                |"/" -> Calculator_RCE.Operations.Divide |> ignore
                | _ -> failwith "UnknownOperation"
         }
+        
     let parserInt(var: string) =
         match Int32.TryParse var with
         |true, result -> Success result
@@ -30,5 +31,5 @@ module Parser_RCE =
     let parserDecimal(var: string) =
         match Decimal.TryParse var with
         |true, result -> Success result
-        | _ -> failwith "Error"
+        | _ -> failwith "Error"    
 

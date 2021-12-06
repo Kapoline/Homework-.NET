@@ -12,8 +12,7 @@ module Parser =
         | _  -> Calculator.Operations.UnknownOperation
         
     let IsInt (arg:string) (result:outref<int>) =
-        let var= ref 0
-        if Int32.TryParse(arg, var) then
+        if Int32.TryParse(arg, &result) then
             true
         else
             false
