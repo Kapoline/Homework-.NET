@@ -31,7 +31,7 @@ module Calculator_RCE =
     let WrongOperator =
         "this operator does not exist"
         
-    let Calculate (var1: decimal) (var2:decimal) operation =
+    let Calculate var1 var2 operation =
        match operation with
          |Plus -> Success (var1 + var2)
          |Minus -> Success(var1 - var2)
