@@ -2,49 +2,56 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using WebApp_9.Controllers;
 
 namespace WebApp_9.Calculator
 {
     public class Parser
     {
-        public static Expression ParseStr(string str)
+        public static Expression Parse(string str)
         {
-            var operators = 0;
-            for (var i = 0; i < str.Length;i++)
+            int count = 0;
+            int index = -1;
+            for (int i = 0; i < str.Length; i++)
             {
-                if (str[i] != '(' || str[i] != ')')
+                char varb = str[i];
+                if (varb == '(') count++;
+                else if (varb == ')') count--;
+                else if ((varb is '+' or '-') && count == 0)
                 {
-                    if (str[i] == '+' || str[i] == '-')
-                    {
-                        operators = i;
-                        break;
-                    }
-
-                    if (str[i] == '*' || str[i] == '/')
-                    {
-                        operators = i;
-                    }
+                    index = i;
+                    break;
+                }
+                else if ((varb is '*' or '/') && count == 0 && index < 0)
+                {
+                    index = i;
                 }
             }
-            if (operators == 0)
-            {
-                
-            }
-            
-        }
-        
 
-        public int Calculate(int var1, int var2,Operations operation)
-        {
-            var result = operation switch
+            if (index < 0)
             {
-                Operations.Plus => var1 + var2,
-                Operations.Minus => var1 - var2,
-                Operations.Mult => var1 * var2,
-                Operations.Divide => var1 / var2,
-                _ => -1
+                str = str.Trim();
+                if (str[0] == '(' && str[^1] == ')')
+                {
+                    return Parse(str.Substring(1, str.Length - 2));
+                }
+
+                return Expression.Constant(int.Parse(str));
+            }
+
+            return Expression.MakeBinary(ParseOperator(str[index]), Parse(str[..index]), Parse(str[(index + 1)..]));
+        }
+
+        private static ExpressionType ParseOperator(char str)
+        {
+            return str switch
+            {
+                '+' => ExpressionType.Add,
+                '-' => ExpressionType.Subtract,
+                '*' => ExpressionType.Multiply,
+                '/' => ExpressionType.Divide,
+                _ => throw new ArgumentOutOfRangeException(nameof(str), str, null)
             };
-            return result;
+        }
         }
     }
-}
