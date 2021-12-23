@@ -19,23 +19,10 @@ namespace WebApp_10.Calculator
         {
             var cache = _context.ExpressionCache.Find(expression.ToString());
             var varb = "varb";
-            for (int i = 0; i < 500; i++)
-            {
-                var thread = new Thread(x =>
-                {
-                    while (true)
-                    {
-                        Thread.Sleep(1000);
-                    }
-                });
-                thread.Start();
-            }
-
             if (cache != null)
             {
                 return Expression.Constant(cache.Value);
             }
-
             var result = _visitor.Visit(expression) as ConstantExpression;
             _context.ExpressionCache.Add(new ExpressionModel()
             {
