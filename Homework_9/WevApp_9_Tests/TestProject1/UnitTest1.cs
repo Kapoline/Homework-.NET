@@ -12,6 +12,12 @@ namespace TestProject1
     public class UnitTest1
     {
         private WebApplicationFactory<Startup> _factory;
+        private readonly HttpClient _client;
+
+        public UnitTest1(HttpClient client)
+        {
+            _client = client;
+        }
 
         private void Factory()
         {
