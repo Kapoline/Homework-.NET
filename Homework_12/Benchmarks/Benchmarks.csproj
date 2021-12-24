@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net5.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="BenchmarkDotNet" Version="0.13.1" />
+      <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="5.0.0" />
+      <PackageReference Include="MiniProfiler" Version="4.2.22" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\Homework_6\Calculator_ASP\Calculator_ASP.fsproj" />
+      <ProjectReference Include="..\..\Homework_8\WebAppMVC_8\WebAppMVC_8.csproj" />
+    </ItemGroup>
+
+</Project>

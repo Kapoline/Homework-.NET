@@ -24,7 +24,9 @@ namespace WebAppMVC_8
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMiniProfiler();
             services.AddSingleton<ICalculator>(new Calculator.Calculator());
+            services.AddSingleton<IParser>(new Parser());
             services.AddControllersWithViews();
         }
 

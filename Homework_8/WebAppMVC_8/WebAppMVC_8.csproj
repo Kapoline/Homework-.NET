@@ -5,13 +5,12 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\Homework_1\Homework_1.csproj" />
-      <ProjectReference Include="..\..\Homework_4\F_Calculator\F_Calculator.fsproj" />
-      <ProjectReference Include="..\..\Homework_5\F_Calculator_RCE\F_Calculator_RCE.fsproj" />
+      <_ContentIncludedByDefault Remove="Pages\Calculator\Calculator.cshtml" />
     </ItemGroup>
 
     <ItemGroup>
-      <_ContentIncludedByDefault Remove="Pages\Calculator\Calculator.cshtml" />
+      <PackageReference Include="BenchmarkDotNet" Version="0.13.1" />
+      <PackageReference Include="MiniProfiler.AspNetCore.Mvc" Version="4.2.22" />
     </ItemGroup>
 
 </Project>
