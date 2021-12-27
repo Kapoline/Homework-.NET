@@ -1,7 +1,6 @@
 ﻿namespace Calculator_ASP
 module Calculator_Handler =
 
- open F_Calculator
  open Giraffe
  open Giraffe.Core
  open Microsoft.Extensions.Logging

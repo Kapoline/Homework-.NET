@@ -1,8 +1,6 @@
 namespace Calculator_ASP
 
 open System
-open F_Calculator
-open Home_work_1
 open Microsoft.AspNetCore.Builder
 open Microsoft.AspNetCore.Hosting
 open Microsoft.AspNetCore.Http

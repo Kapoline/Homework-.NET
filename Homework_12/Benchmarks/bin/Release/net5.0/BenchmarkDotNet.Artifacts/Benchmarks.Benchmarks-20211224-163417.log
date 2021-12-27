@@ -1,0 +1,56 @@
+// Validating benchmarks:
+// ***** BenchmarkRunner: Start   *****
+// ***** Found 4 benchmark(s) in total *****
+// ***** Building 1 exe(s) in Parallel: Start   *****
+// ***** Done, took 00:00:00 (0.12 sec)   *****
+// Found 4 benchmarks:
+//   Benchmarks.PlusCs: DefaultJob
+//   Benchmarks.PlusFs: DefaultJob
+//   Benchmarks.MinusCs: DefaultJob
+//   Benchmarks.MinusFs: DefaultJob
+
+// Generate Exception: async void is not supported by design
+
+// BenchmarkDotNet has failed to build the auto-generated boilerplate code.
+// It can be found in C:\Users\User\Homework-.NET\Homework_12\Benchmarks\bin\Release\net5.0\07f556a9-69d8-471e-be0d-6990157d0f3f
+// Please follow the troubleshooting guide: https://benchmarkdotnet.org/articles/guides/troubleshooting.html
+// ***** BenchmarkRunner: Finish  *****
+
+// * Export *
+  BenchmarkDotNet.Artifacts\results\Benchmarks.Benchmarks-report.csv
+  BenchmarkDotNet.Artifacts\results\Benchmarks.Benchmarks-report-github.md
+  BenchmarkDotNet.Artifacts\results\Benchmarks.Benchmarks-report.html
+
+// * Detailed results *
+Benchmarks.PlusCs: DefaultJob
+Runtime = ; GC = 
+There are not any results runs
+
+// * Summary *
+
+BenchmarkDotNet=v0.13.1, OS=Windows 10.0.19042.1415 (20H2/October2020Update)
+AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx, 1 CPU, 8 logical and 4 physical cores
+.NET SDK=5.0.404
+  [Host] : .NET 5.0.13 (5.0.1321.56516), X64 RyuJIT
+
+
+| Method | Mean | Error | Min | Max |
+|------- |-----:|------:|----:|----:|
+| PlusCs |   NA |    NA |  NA |  NA |
+
+Benchmarks with issues:
+  Benchmarks.PlusCs: DefaultJob
+
+// * Legends *
+  Mean  : Arithmetic mean of all measurements
+  Error : Half of 99.9% confidence interval
+  Min   : Minimum
+  Max   : Maximum
+  1 ns  : 1 Nanosecond (0.000000001 sec)
+
+// ***** BenchmarkRunner: End *****
+// ** Remained 0 benchmark(s) to run **
+Run time: 00:00:00 (0.47 sec), executed benchmarks: 0
+
+Global total time: 00:00:00 (0.6 sec), executed benchmarks: 0
+// * Artifacts cleanup *
