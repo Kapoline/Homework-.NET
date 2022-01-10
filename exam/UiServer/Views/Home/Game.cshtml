@@ -1,0 +1,21 @@
+﻿@model Character
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Enter your name</title>
+</head>
+<body>
+<form method="post" asp-controller="Character"  asp-action="Get">
+    <div >
+        @Html.EditorForModel()
+        <button>Figth</button>
+    </div>
+</form>
+</body>
+</html>
